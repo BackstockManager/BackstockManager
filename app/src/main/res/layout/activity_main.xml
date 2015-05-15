@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ff555555"
+    android:id="@+id/welcomeScreen"
+    android:textAlignment="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome to"
+        android:id="@+id/welcomeMessage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:textSize="35dp"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Backstock Manager"
+        android:id="@+id/welcomeBsm"
+        android:textSize="35dp"
+        android:layout_below="@+id/welcomeMessage"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameText"
+        android:autoText="false"
+        android:inputType="text"
+        android:editable="true"
+        android:hint="Username"
+        android:layout_below="@+id/welcomeBsm"
+        android:layout_marginTop="103dp"
+        android:layout_alignLeft="@+id/welcomeBsm"
+        android:layout_alignStart="@+id/welcomeBsm"
+        android:layout_alignRight="@+id/welcomeBsm"
+        android:layout_alignEnd="@+id/welcomeBsm"
+        android:textColorHint="#ffffffff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordText"
+        android:autoText="false"
+        android:editable="true"
+        android:hint="Password"
+        android:layout_below="@+id/usernameText"
+        android:layout_marginTop="30dp"
+        android:layout_alignRight="@+id/usernameText"
+        android:layout_alignEnd="@+id/usernameText"
+        android:layout_alignLeft="@+id/usernameText"
+        android:layout_alignStart="@+id/usernameText"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffffff" />
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="65dp"
+        android:text="@string/button_login_submit"
+        android:id="@+id/login_Button"
+        android:layout_below="@+id/passwordText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:background="#ff000000"
+        android:textColor="#ffffffff"
+        style="@android:style/Widget.Button.Inset"
+        android:onClick="submitLogin"/>
+</RelativeLayout>
