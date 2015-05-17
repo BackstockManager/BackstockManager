@@ -20,5 +20,10 @@
 
     <!-- Activity Home -->
     <string name="title_activity_home_screen">HomeScreen</string>
+    <string name="title_activity_totes">TotesActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_users">Users</string>
 
 </resources>

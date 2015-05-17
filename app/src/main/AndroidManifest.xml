@@ -32,6 +32,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.chris.backstockmanager.MainActivity" />
         </activity>
+        <activity
+            android:name=".TotesActivity"
+            android:label="@string/title_activity_totes"
+            android:parentActivityName=".HomeScreenActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chris.backstockmanager.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:parentActivityName=".HomeScreenActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chris.backstockmanager.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".Users"
+            android:label="@string/title_activity_users"
+            android:parentActivityName=".HomeScreenActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chris.backstockmanager.HomeScreenActivity" />
+        </activity>
     </application>
 
 </manifest>

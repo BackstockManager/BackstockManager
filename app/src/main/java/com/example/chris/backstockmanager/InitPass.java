@@ -2,11 +2,13 @@ package com.example.chris.backstockmanager;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class InitPass extends ActionBarActivity {
+public class InitPass extends AppCompatActivity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
