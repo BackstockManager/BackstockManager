@@ -3,25 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.chris.backstockmanager.TotesActivity">
     <item
-        android:id="@+id/action_nav"
-        android:title="@string/action_nav"
+        android:id="@+id/action_Totes"
+        android:title="@string/action_totes"
+    />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+    />
+    <item
+        android:id="@+id/action_users"
+        android:title="@string/action_users"
+    />
+    <item
+        android:id="@+id/action_manage"
+        android:title="@string/action_manage"
         android:orderInCategory="100"
-        app:showAsAction="always">
+        app:showAsAction="always"
+    />
 
-        <menu>
-            <item
-                android:id="@+id/action_Totes"
-                android:title="@string/action_totes"
-                />
-            <item
-                android:id="@+id/action_settings"
-                android:title="@string/action_settings"
-                />
-            <item
-                android:id="@+id/action_users"
-                android:title="@string/action_users"
-                />
-        </menu>
-
-    </item>
 </menu>

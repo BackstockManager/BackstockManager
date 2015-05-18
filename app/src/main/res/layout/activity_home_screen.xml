@@ -21,36 +21,6 @@
         android:textSize="30dp"
         android:textColorHint="#ffffffff" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toteColor"
-        android:inputType="text"
-        android:hint="Tote Color"
-        android:textIsSelectable="false"
-        android:background="#2a000000"
-        android:textAlignment="center"
-        android:layout_below="@+id/toteLabel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
-        android:textSize="30dp"
-        android:textColorHint="#ffffffff" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toteSize"
-        android:hint="Tote Size"
-        android:background="#2a000000"
-        android:textAlignment="center"
-        android:layout_below="@+id/toteColor"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
-        android:textSize="30dp"
-        android:textColorHint="#ffffffff" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,10 +39,10 @@
         android:id="@+id/emptyToteButton"
         android:background="#ff000000"
         android:textColor="#ffffffff"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/toteSize"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -81,10 +51,10 @@
         android:id="@+id/viewToteButton"
         android:background="#ff000000"
         android:textColor="#ffffffff"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/emptyToteButton"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="fill_parent"
@@ -93,9 +63,31 @@
         android:id="@+id/fillToteButton"
         android:background="#ff000000"
         android:textColor="#ffffffff"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/viewToteButton"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toteColor"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/toteLabel"
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dialog"
+        android:clickable="true"
+        android:prompt="@string/select_color" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toteSize"
+        android:layout_below="@+id/toteColor"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:spinnerMode="dialog"
+        android:prompt="@string/select_size" />
 
 </RelativeLayout>
