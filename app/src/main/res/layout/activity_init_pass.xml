@@ -26,6 +26,7 @@
         android:id="@+id/password"
         android:hint="@string/entry_activity_init_pass_pass"
         android:layout_centerVertical="true"
+        android:layout_marginBottom="49dp"
         android:layout_alignLeft="@+id/userName"
         android:layout_alignStart="@+id/userName"
         android:layout_alignParentRight="true"
@@ -41,6 +42,7 @@
         android:textColor="#ffffffff"
         android:layout_marginTop="88dp"
         android:layout_below="@+id/password"
+        android:onClick="addUser"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -55,4 +57,16 @@
         android:layout_centerHorizontal="true"
         android:textColor="#ffffffff"
         android:textSize="35dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/init_pass_button_security"
+        android:layout_below="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Security (1-5)"
+        android:textColorHint="#ffffffff" />
 </RelativeLayout>

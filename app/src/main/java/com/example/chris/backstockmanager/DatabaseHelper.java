@@ -28,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
            "( label text not null,"           +
            "color text not null,"             +
            "size text not null,"              +
-           "d-filled text,"                   +
+           "dfilled text,"                   +
            "sex text,"                        +
            "category text,"                   +
            "subcategory text,"                +

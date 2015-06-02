@@ -52,7 +52,7 @@ public class dbwrapper
         return database.insert(USERS_TABLE, null, values);
     }
 
-    public long cresteTotesRecord(String label, String color, String size, String date,
+    public long createTotesRecord(String label, String color, String size, String date,
                                   String sex, String category, String subcategory,
                                   String season, String hung, String sensor, String offsite,
                                   String location, String user)

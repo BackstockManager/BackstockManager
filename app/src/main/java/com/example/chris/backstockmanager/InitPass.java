@@ -1,10 +1,14 @@
 package com.example.chris.backstockmanager;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import com.example.chris.backstockmanager.dbwrapper;
 
 
 public class InitPass extends AppCompatActivity
@@ -36,5 +40,28 @@ public class InitPass extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void addUser(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        dbwrapper addToDb;
+        EditText editUserName;
+        EditText editPassword;
+        EditText editSecurity;
+        String userName;
+        String Password;
+        String Security;
+
+        editUserName = (EditText)findViewById(R.id.userName);
+        editPassword = (EditText)findViewById(R.id.password);
+        editSecurity = (EditText)findViewById(R.id.init_pass_button_security);
+        userName = editUserName.getText().toString();
+        Password = editPassword.getText().toString();
+        Security = editSecurity.getText().toString();
+        addToDb = new dbwrapper(this);
+        addToDb.createUsersRecord(userName, Password, Security, "Default");
+
+        startActivity(intent);
     }
 }
