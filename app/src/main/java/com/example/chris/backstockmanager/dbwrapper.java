@@ -13,6 +13,7 @@ public class dbwrapper
 
     public final static String USERS_TABLE     = "users";    // name of table
     public final static String TOTES_TABLE     = "totes";    // name of table
+    public final static String FLAG_TABLE      = "flag";     // name of table
 
     public final static String USERS_NAME       = "name";        // name of user
     public final static String USERS_PASSWORD   = "password";    // password of user
@@ -22,15 +23,16 @@ public class dbwrapper
     public final static String TOTE_COLOR       = "color";       // color of tote
     public final static String TOTE_SIZE        = "size";        // size of tote
     public final static String TOTE_DATE        = "d-filled";    // date of tote
-    public final static String TOTE_SEX         = "sex";         // date of tote
-    public final static String TOTE_CATEGORY    = "category";    // date of tote
-    public final static String TOTE_SUBCATEGORY = "subcategory"; // date of tote
-    public final static String TOTE_SEASON      = "season";      // date of tote
-    public final static String TOTE_HUNG        = "hung";        // date of tote
-    public final static String TOTE_SENSOR      = "sensor";      // date of tote
-    public final static String TOTE_OFFSITE     = "offsite";     // date of tote
-    public final static String TOTE_LOCATION    = "location";    // date of tote
-    public final static String TOTE_USER        = "user";    // date of tote
+    public final static String TOTE_SEX         = "sex";         // sex of tote
+    public final static String TOTE_CATEGORY    = "category";    // category of tote
+    public final static String TOTE_SUBCATEGORY = "subcategory"; // sub of tote
+    public final static String TOTE_SEASON      = "season";      // season of tote
+    public final static String TOTE_HUNG        = "hung";        // hung of tote
+    public final static String TOTE_SENSOR      = "sensor";      // sensor of tote
+    public final static String TOTE_OFFSITE     = "offsite";     // offsite of tote
+    public final static String TOTE_LOCATION    = "location";    // location of tote
+    public final static String TOTE_USER        = "user";        // user of tote
+    public final static String FLAG_FLAG        = "flag";        // flag
 
 
     private DatabaseHelper dbHelper;
@@ -50,6 +52,13 @@ public class dbwrapper
         values.put(USERS_SECURITY, security);
         values.put(USERS_THEME, theme);
         return database.insert(USERS_TABLE, null, values);
+    }
+
+    public long createFlagRecord(String flag)
+    {
+        ContentValues values = new ContentValues();
+        values.put(FLAG_FLAG,flag);
+        return database.insert(FLAG_TABLE, null, values);
     }
 
     public long createTotesRecord(String label, String color, String size, String date,
@@ -74,13 +83,12 @@ public class dbwrapper
         return database.insert(TOTES_TABLE, null, values);
     }
 
-    /*public Cursor selectRecords() {
-        String[] cols = new String[] {EMP_ID, EMP_NAME};
-        Cursor mCursor = database.query(true, EMP_TABLE,cols,null
-                , null, null, null, null, null);
-        if (mCursor != null) {
-            mCursor.moveToFirst();
-        }
-        return mCursor; // iterate to get each value.
-    }*/
+    public boolean selectFlagRecords()
+    {
+        Cursor mCursor = database.rawQuery("select * from flag",null);
+        if (mCursor != null)
+            return true;
+        else
+            return false;
+    }
 }

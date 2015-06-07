@@ -55,13 +55,28 @@ public class InitPass extends AppCompatActivity
 
         editUserName = (EditText)findViewById(R.id.userName);
         editPassword = (EditText)findViewById(R.id.password);
-        editSecurity = (EditText)findViewById(R.id.init_pass_button_security);
+        editSecurity = (EditText)findViewById(R.id.init_pass_security);
         userName = editUserName.getText().toString();
         Password = editPassword.getText().toString();
         Security = editSecurity.getText().toString();
         addToDb = new dbwrapper(this);
         addToDb.createUsersRecord(userName, Password, Security, "Default");
+        addToDb.createFlagRecord("flag");
 
         startActivity(intent);
+    }
+
+    private void clearScreen()
+    {
+        EditText edit;
+        edit = (EditText)findViewById(R.id.userName);
+        edit.setText("");
+        edit.setHint("Username");
+        edit = (EditText)findViewById(R.id.password);
+        edit.setText("");
+        edit.setHint("Password");
+        edit = (EditText)findViewById(R.id.init_pass_security);
+        edit.setText("");
+        edit.setHint("Security (1-5)");
     }
 }

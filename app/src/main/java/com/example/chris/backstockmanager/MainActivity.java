@@ -1,6 +1,8 @@
 package com.example.chris.backstockmanager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import com.example.chris.backstockmanager.dbwrapper;
+
+import java.io.File;
 
 
 public class MainActivity extends AppCompatActivity
@@ -32,7 +37,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onPrepareOptionsMenu(Menu menu)
     {
-        menu.findItem(R.id.action_settings).setVisible(true);
+        if (isFlagRecord())
+        {
+            menu.findItem(R.id.action_settings).setVisible(false);
+        }
+        else
+        {
+            menu.findItem(R.id.action_settings).setVisible(true);
+        }
         return true;
     }
 
@@ -64,5 +76,17 @@ public class MainActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this, InitPass.class);
         startActivity(intent);
+    }
+
+    public boolean isFlagRecord()
+    {
+        Context context = getApplicationContext();
+        File dbFile = context.getDatabasePath("backstockdb");
+        if (dbFile.exists())
+        {
+            dbwrapper addToDb = new dbwrapper(this);
+            return addToDb.selectFlagRecords();
+        }
+        return false;
     }
 }

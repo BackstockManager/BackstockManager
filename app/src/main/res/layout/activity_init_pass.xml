@@ -61,7 +61,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/init_pass_button_security"
+        android:id="@+id/init_pass_security"
         android:layout_below="@+id/password"
         android:layout_alignRight="@+id/password"
         android:layout_alignEnd="@+id/password"

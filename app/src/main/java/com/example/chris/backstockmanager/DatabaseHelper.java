@@ -40,15 +40,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
            "user text,"                       +
            "primary key (label,color,size));";
 
-    public DatabaseHelper(Context context) {
+    private static final String DATABASE_CREATE_FLAG =
+            "create table if not exists flag" +
+            "( flag integer default 0 primary key);";
+
+    public DatabaseHelper(Context context)
+    {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     // Method is called during creation of the database
     @Override
-    public void onCreate(SQLiteDatabase database) {
+    public void onCreate(SQLiteDatabase database)
+    {
         database.execSQL(DATABASE_CREATE_USERS);
         database.execSQL(DATABASE_CREATE_TOTES);
+        database.execSQL(DATABASE_CREATE_FLAG);
     }
 
     // Method is called during an upgrade of the database,
