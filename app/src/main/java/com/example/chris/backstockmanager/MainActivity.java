@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.example.chris.backstockmanager.dbwrapper;
 
 import java.io.File;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        checkAdmin();
         setContentView(R.layout.activity_main);
     }
 
@@ -85,8 +88,17 @@ public class MainActivity extends AppCompatActivity
         if (dbFile.exists())
         {
             dbwrapper addToDb = new dbwrapper(this);
-            return addToDb.selectFlagRecords();
+            if (addToDb.selectFlagRecords() == 1)
+                return true;
+            else
+                return false;
         }
         return false;
+    }
+
+    public void checkAdmin()
+    {
+        dbwrapper addToDb = new dbwrapper(this);
+        addToDb.checkForAdmin();
     }
 }

@@ -61,7 +61,7 @@ public class InitPass extends AppCompatActivity
         Security = editSecurity.getText().toString();
         addToDb = new dbwrapper(this);
         addToDb.createUsersRecord(userName, Password, Security, "Default");
-        addToDb.createFlagRecord("flag");
+        addToDb.createFlagRecord(1);
 
         startActivity(intent);
     }
