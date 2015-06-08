@@ -74,5 +74,5 @@
         android:background="#ff000000"
         android:textColor="#ffffffff"
         style="@android:style/Widget.Button.Inset"
-        android:onClick="submitLogin"/>
+        android:onClick="logon"/>
 </RelativeLayout>

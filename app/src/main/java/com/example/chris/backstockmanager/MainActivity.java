@@ -2,18 +2,13 @@ package com.example.chris.backstockmanager;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.chris.backstockmanager.dbwrapper;
-
 import java.io.File;
 
 
@@ -69,12 +64,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void submitLogin(View view)
-    {
-        Intent intent = new Intent(this, HomeScreenActivity.class);
-        startActivity(intent);
-    }
-
     public void initPass(MenuItem menuItem)
     {
         Intent intent = new Intent(this, InitPass.class);
@@ -88,10 +77,7 @@ public class MainActivity extends AppCompatActivity
         if (dbFile.exists())
         {
             dbwrapper addToDb = new dbwrapper(this);
-            if (addToDb.selectFlagRecords() == 1)
-                return true;
-            else
-                return false;
+            return addToDb.selectFlagRecords() == 1;
         }
         return false;
     }
@@ -100,5 +86,36 @@ public class MainActivity extends AppCompatActivity
     {
         dbwrapper addToDb = new dbwrapper(this);
         addToDb.checkForAdmin();
+    }
+
+    public void logon(View view)
+    {
+        dbwrapper DBcheckLogon = new dbwrapper(this);
+        EditText userNameEdit = (EditText)findViewById(R.id.usernameText);
+        String userName = userNameEdit.getText().toString();
+        EditText passwordEdit = (EditText)findViewById(R.id.passwordText);
+        String password = passwordEdit.getText().toString();
+
+        //check if db exists, then check password
+        Context context = getApplicationContext();
+        File dbFile = context.getDatabasePath("backstockdb");
+        if (dbFile.exists())
+        {
+            if (DBcheckLogon.checkPassword(userName, password))
+            {
+                Intent intent = new Intent(this, HomeScreenActivity.class);
+                startActivity(intent);
+            }
+            //pw or name is wrong
+            else
+            {
+                Toast.makeText(context,"Invalid Credentials",Toast.LENGTH_LONG).show();
+            }
+        }
+        //db not created, need init user
+        else
+        {
+            Toast.makeText(context,"No Users",Toast.LENGTH_LONG).show();
+        }
     }
 }

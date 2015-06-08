@@ -87,6 +87,24 @@ public class dbwrapper {
             return 0;
     }
 
+    public boolean checkPassword(String userName,String password)
+    {
+        String queryString = "select * from users" +
+                             " where name='" + userName + "'";
+        Cursor mCursor = database.rawQuery(queryString,null);
+        if (mCursor.moveToNext())
+        {
+            if (mCursor.getString(mCursor.getColumnIndex("password")).equals(password))
+                return true;
+            else
+                return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public boolean checkForAdmin()
     {
         String selectStatement = "select * from users" +
