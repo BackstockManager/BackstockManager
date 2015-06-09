@@ -32,12 +32,13 @@
     <!-- Activity Users -->
     <string name="title_activity_users">User Management</string>
     <string name="hint_username">Username</string>
-    <string name="button_add_user">Add User</string>
+    <string name="button_add_user">Add/Modify User</string>
     <string name="button_modify_user">Modify User</string>
     <string name="button_delete_user">Delete User</string>
     <string name="button_recent_history">Recent History</string>
     <string name="title_activity_test_db">TestDb</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_add_users">AddUsers</string>
 
 </resources>

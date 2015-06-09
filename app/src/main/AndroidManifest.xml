@@ -60,6 +60,14 @@
             android:name=".TestDb"
             android:label="@string/title_activity_test_db" >
         </activity>
+        <activity
+            android:name=".AddUsers"
+            android:label="@string/title_activity_add_users"
+            android:parentActivityName=".Users" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chris.backstockmanager.Users" />
+        </activity>
     </application>
 
 </manifest>

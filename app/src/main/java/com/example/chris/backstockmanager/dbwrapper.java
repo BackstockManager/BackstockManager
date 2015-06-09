@@ -121,4 +121,9 @@ public class dbwrapper {
             return false;
         }
     }
+
+    public boolean deleteUser(String name)
+    {
+        return database.delete(USERS_TABLE, USERS_NAME + "='" + name + "'",null) > 0;
+    }
 }

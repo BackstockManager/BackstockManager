@@ -40,17 +40,7 @@
         android:layout_alignRight="@+id/editUserName"
         android:layout_alignEnd="@+id/editUserName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_modify_user"
-        android:id="@+id/buttonModify"
-        android:layout_below="@+id/addButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
+        android:onClick="addModifyUser"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -58,10 +48,11 @@
         android:layout_height="wrap_content"
         android:text="@string/button_delete_user"
         android:id="@+id/buttonDelete"
-        android:layout_below="@+id/buttonModify"
-        android:layout_alignRight="@+id/buttonModify"
-        android:layout_alignEnd="@+id/buttonModify"
+        android:layout_below="@+id/addButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:onClick="deleteUser"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -70,9 +61,11 @@
         android:text="@string/button_recent_history"
         android:id="@+id/buttonHistory"
         android:layout_below="@+id/buttonDelete"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignRight="@+id/buttonDelete"
+        android:layout_alignEnd="@+id/buttonDelete"
         android:layout_alignParentLeft="true"
+        android:visibility="invisible"
+        android:onClick="deleteUser"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>
